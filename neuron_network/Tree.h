@@ -1,8 +1,10 @@
 #pragma once
 #include "../Diff_evolution/DiffEvolution.h"
 #include "../Diff_evolution/IndividualDiffEvolution.h"
+
 #include "../general/computing_limitation.h"
 #include "../general/sample_storage.h"
+
 #include "Neuron.h"
 #include <fstream>
 #include <functional>
@@ -82,7 +84,7 @@ class Tree
 
     // Связано с пригодностью
     double ef = 1;      // Коэффициент при RMSE
-    double nf = 0;      // Коэффициент при количестве узлов
+    double nf = 0.1;     // Коэффициент при количестве узлов
     int maxNodes = 100; // Максимальное количество узлов в дереве
 
     int *ammNeuron = nullptr; // Количество узлов в слое
@@ -282,7 +284,7 @@ class Tree
         }
         for (int i = 0; i < ammOutputs; i++)
         {
-            if (output[i].getUseFunc() == -1 or output[i].getInputBranch())
+            if (output[i].getUseFunc() == -1) or (output[i].getInputBranch())
                 continue; // Пропускаем неиспользуемые нейроны и входные нейроны
             double *coef = output[i].getCoefficients();
             for (int k = 0; k < output[i].getAmountInp() + 1; k++)
@@ -384,7 +386,7 @@ class Tree
         ofstream file(fileName);
         if (!file.is_open())
         {
-            cerr << "Error opening file: " << fileName << endl;
+            cerr << "Error opening file for network: " << fileName << endl;
             return;
         }
 

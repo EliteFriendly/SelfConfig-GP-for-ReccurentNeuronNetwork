@@ -1,0 +1,19 @@
+fitness: 0.946009
+Number of inputs: 30
+Number of outputs: 2
+Number of vertices: 0
+Number of nodes: 16
+EF: 1
+NF: 0
+Max nodes: 100
+Number of layers: 2
+Number of neurons in each layer: 7 2 
+FuncActivation:[ Input - 9 ] [ Input - 18 ] [ Input - 2 ] [ Input - 3 ] [ Input - 18 ] [ Input - 23 ] [ Input - 18 ] 
+[ 5 ] [ 6 ] 
+Coordinates: 
+[] [] [] [] [] [] [] End
+[{ -1 ; 0 }{ -1 ; 1 }{ -1 ; 2 }{ -1 ; 3 }{ -1 ; 4 }{ -1 ; 5 }{ -1 ; 6 }] [{ -1 ; -1 }{ -1 ; 0 }{ -1 ; 1 }{ -1 ; 2 }{ -1 ; 3 }{ -1 ; 4 }{ -1 ; 5 }] End
+Outputs
+[{ -1 ; 0 }{ -1 ; 1 }] [{ -1 ; -1 }{ -1 ; 0 }] 
+Coefficients: 
+-12.6259 -31.2111 -88.0143 22.769 11.7291 -16.8735 9.67583 3.16273 -29.1719 -4.80914 5.67836 -2.1466 6.13202 29.0055 6.89383 7.34239 0.108956 17.483 -7.36119 -114.932 -21.4523 1.07971 

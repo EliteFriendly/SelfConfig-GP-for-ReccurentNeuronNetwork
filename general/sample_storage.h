@@ -4,10 +4,14 @@
 using namespace std;
 
 #pragma once
+
 class SampleStorage
 {
   private:
     double **trainData = nullptr;
+
+
+
     double **testData = nullptr;
     int size = 0;
     int trainSize = 0;
@@ -45,7 +49,9 @@ class SampleStorage
         if (amClasses != trainSize)
         {
             cout << "Er" << endl;
-            trainClass[rand() % numbersOfClasses] += trainSize - amClasses;
+
+            trainClass[gen() % numbersOfClasses] += trainSize - amClasses;
+
         }
         int i1 = 0, i2 = 0;
         for (int j = 0; j < size; j++)

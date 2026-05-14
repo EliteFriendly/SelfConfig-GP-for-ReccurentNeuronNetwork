@@ -182,6 +182,8 @@ void AdaptiveGeneticProgramming::startTrain(double **x, int ammInputs, int amOut
     ofstream fGen("algorithm_results/MaxGeneration/ReachedGeneration_" + markFile + ".txt");
     fSel.open("algorithm_results/Probabilities/ProbabilSel_" + markFile + ".txt");
 
+
+
     fCross.open("algorithm_results/Probabilities/ProbabilCross_" + markFile + ".txt");
     fMut.open("algorithm_results/Probabilities/ProbabilMut_" + markFile + ".txt");
 
@@ -221,15 +223,19 @@ void AdaptiveGeneticProgramming::startTrain(double **x, int ammInputs, int amOut
 
         arrayIndividuals[i] = t;
         arrayIndividuals[i].doNeuronNetwork();
+
         arrayIndividuals[i].trainWithDE(sampleStorage, size, computingLimitation);
         cout << "Individual\t" << i << endl;
+
     }
     //cout << "Computing limitation = " << computingLimitation.getComputingLimitation() << endl;
     findBest(); // Первый поиск лучшего индивида
     // Основное начало алгоритма
     int numParent1, numParent2;
+
     int maxGeneration = 0;
     for (int i = 0; computingLimitation.getComputingLimitation() > 0; i++)
+
     {
         // cout << "Номер генерации = " << i << endl;
         setSelectionsArrays();
@@ -241,17 +247,20 @@ void AdaptiveGeneticProgramming::startTrain(double **x, int ammInputs, int amOut
             // arrayChildren[j].trainWithDE(x, y, size, K1);
         }
         cout << "Generation " << i << endl;
-        threadsFitnessCalc(sampleStorage, 12);
-        // cout << "Computing limitation = " << computingLimitation.getComputingLimitation() << endl;
+
+        threadsFitnessCalc(x, 6);
+
         recalcProbabilities();
 
         forming.replaceGeneration(arrayIndividuals, arrayChildren, numIndividuals);
         findBest();
         maxGeneration = i;
     }
+
     fGen << maxGeneration << endl;
     fGen.close();
     fSel.close();
     fCross.close();
     fMut.close();
+
 }
