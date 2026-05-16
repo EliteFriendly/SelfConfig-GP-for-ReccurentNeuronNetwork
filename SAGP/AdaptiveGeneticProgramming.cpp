@@ -248,7 +248,7 @@ void AdaptiveGeneticProgramming::startTrain(double **x, int ammInputs, int amOut
         }
         cout << "Generation " << i << endl;
 
-        threadsFitnessCalc(x, 6);
+        threadsFitnessCalc(sampleStorage, 6);
 
         recalcProbabilities();
 

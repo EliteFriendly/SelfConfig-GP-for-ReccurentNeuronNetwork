@@ -50,7 +50,7 @@ class SampleStorage
         {
             cout << "Er" << endl;
 
-            trainClass[gen() % numbersOfClasses] += trainSize - amClasses;
+            trainClass[rand() % numbersOfClasses] += trainSize - amClasses;
 
         }
         int i1 = 0, i2 = 0;
@@ -128,7 +128,7 @@ class SampleStorage
         for (int i = 0; i < size; i++)
         {
             tmp += remainder;
-            if (tmp < 1 and i1 < trainSize)
+            if (tmp < 1 && i1 < trainSize)
             {
                 for (int j = 0; j < amDimensions; j++)
                 {

@@ -274,7 +274,7 @@ class Tree
         {
             for (int j = 0; j < ammNeuron[i]; j++)
             {
-                if (network[i][j].getUseFunc() == -1 or network[i][j].getInputBranch())
+                if (network[i][j].getUseFunc() == -1 || network[i][j].getInputBranch())
                     continue; // Пропускаем неиспользуемые нейроны и входные нейроны
                 double *coef = network[i][j].getCoefficients();
 
@@ -284,7 +284,7 @@ class Tree
         }
         for (int i = 0; i < ammOutputs; i++)
         {
-            if (output[i].getUseFunc() == -1) or (output[i].getInputBranch())
+            if (output[i].getUseFunc() == -1 || output[i].getInputBranch())
                 continue; // Пропускаем неиспользуемые нейроны и входные нейроны
             double *coef = output[i].getCoefficients();
             for (int k = 0; k < output[i].getAmountInp() + 1; k++)
@@ -427,7 +427,7 @@ class Tree
         {
             for (int j = 0; j < ammNeuron[i]; j++)
             {
-                if (network[i][j].getUseFunc() == -1 or network[i][j].getInputBranch())
+                if (network[i][j].getUseFunc() == -1 && network[i][j].getInputBranch())
                     continue; // Пропускаем неиспользуемые нейроны и входные нейроны
                 double *coef = network[i][j].getCoefficients();
 
@@ -437,7 +437,7 @@ class Tree
         }
         for (int i = 0; i < ammOutputs; i++)
         {
-            if (output[i].getUseFunc() == -1 or output[i].getInputBranch())
+            if (output[i].getUseFunc() == -1 && output[i].getInputBranch())
                 continue; // Пропускаем неиспользуемые нейроны и входные нейроны
             double *coef = output[i].getCoefficients();
             for (int k = 0; k < output[i].getAmountInp() + 1; k++)
@@ -549,7 +549,7 @@ class Tree
                 {
                     for (int j = 0; j < ammNeuron[i]; j++)
                     {
-                        if (network[i][j].getUseFunc() == -1 or network[i][j].getInputBranch())
+                        if (network[i][j].getUseFunc() == -1 || network[i][j].getInputBranch())
                         {
                             continue; // Пропускаем неиспользуемые нейроны и входные нейроны
                         }
@@ -562,7 +562,7 @@ class Tree
                 }
                 for (int i = 0; i < ammOutputs; i++)
                 {
-                    if (output[i].getUseFunc() == -1 or output[i].getInputBranch())
+                    if (output[i].getUseFunc() == -1 || output[i].getInputBranch())
                         continue; // Пропускаем неиспользуемые нейроны и входные нейроны
                     double *coef = new double[output[i].getAmountInp() + 1];
                     for (int k = 0; k < output[i].getAmountInp() + 1; k++)
